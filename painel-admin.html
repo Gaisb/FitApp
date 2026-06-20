@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel do Admin — FORTIS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-body">
+
+<div class="dash-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="dash-sidebar">
+    <div class="dash-brand">
+      FOR<span>TIS</span>
+      <span class="role-tag">Admin</span>
+    </div>
+    <nav class="dash-nav">
+      <a href="painel-admin.html" class="active" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+        Visão geral
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Usuários
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        Personals
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
+        Financeiro
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        Relatórios
+      </a>
+      <div class="dash-nav-divider"></div>
+      <a href="selecao-painel.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Trocar de painel
+      </a>
+      <a href="index.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Sair do FORTIS
+      </a>
+    </nav>
+  </aside>
+
+  <!-- CONTEÚDO -->
+  <main class="dash-main">
+
+    <!-- TOPBAR -->
+    <div class="dash-topbar">
+      <div>
+        <span class="eyebrow">Plataforma</span>
+        <h1>Saúde geral do <em style="color:var(--ember);font-style:normal;">FORTIS</em></h1>
+      </div>
+      <div class="dash-user">
+        <div class="dash-user-meta" style="text-align:right;">
+          <div class="nm">Admin</div>
+          <div class="sb">Acesso total</div>
+        </div>
+        <div class="dash-avatar" style="background:var(--gold);">A</div>
+      </div>
+    </div>
+
+    <!-- KPIS -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
+          Total de usuários
+        </div>
+        <div class="kpi-num">1.842</div>
+        <div class="kpi-delta up">+128 esta semana</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          Personals ativos
+        </div>
+        <div class="kpi-num">96</div>
+        <div class="kpi-delta up">+7 este mês</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
+          Receita da plataforma
+        </div>
+        <div class="kpi-num">R$ 96.2k</div>
+        <div class="kpi-delta up">+18% vs. mês anterior</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+          Churn (30 dias)
+        </div>
+        <div class="kpi-num">3,2<span class="unit">%</span></div>
+        <div class="kpi-delta up">-0,4 p.p. vs. anterior</div>
+      </div>
+    </div>
+
+    <!-- BLOCOS -->
+    <div class="dash-grid-2">
+
+      <!-- CRESCIMENTO DE CADASTROS -->
+      <div class="dash-block mini-chart">
+        <div class="dash-block-head">
+          <h3>Crescimento de cadastros</h3>
+          <a class="see-all" href="#">Últimos 6 meses →</a>
+        </div>
+        <svg viewBox="0 0 320 140" preserveAspectRatio="none">
+          <polyline class="chart-fill" points="10,120 60,108 110,98 160,78 210,62 260,42 310,24 310,140 10,140" fill="rgba(255,90,46,0.10)"/>
+          <polyline class="chart-line" points="10,120 60,108 110,98 160,78 210,62 260,42 310,24"/>
+          <circle cx="310" cy="24" r="5" fill="#FF5A2E"/>
+        </svg>
+        <div class="stat-row" style="border-top:1px solid var(--line);padding-top:14px;margin-top:14px;">
+          <div>
+            <div class="num" style="font-family:'IBM Plex Mono',monospace;font-size:18px;">1.842</div>
+            <div class="lbl" style="font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">Usuários totais</div>
+          </div>
+          <div>
+            <div class="num" style="font-family:'IBM Plex Mono',monospace;font-size:18px;color:var(--ember);">+7,5%</div>
+            <div class="lbl" style="font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">Crescimento mensal</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERSONALS CADASTRADOS -->
+      <div class="dash-block">
+        <div class="dash-block-head">
+          <h3>Personals cadastrados</h3>
+          <a class="see-all" href="#">Ver todos →</a>
+        </div>
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>Personal</th><th>Plano</th><th>Alunos</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gabriel S.</td>
+              <td class="num-cell">Pro</td>
+              <td class="num-cell">24</td>
+              <td><span class="pill ok">Ativo</span></td>
+            </tr>
+            <tr>
+              <td>Beatriz N.</td>
+              <td class="num-cell">Pro</td>
+              <td class="num-cell">41</td>
+              <td><span class="pill ok">Ativo</span></td>
+            </tr>
+            <tr>
+              <td>Carlos T.</td>
+              <td class="num-cell">Free</td>
+              <td class="num-cell">3</td>
+              <td><span class="pill warn">Trial</span></td>
+            </tr>
+            <tr>
+              <td>Daniela V.</td>
+              <td class="num-cell">Pro</td>
+              <td class="num-cell">18</td>
+              <td><span class="pill ok">Ativo</span></td>
+            </tr>
+            <tr>
+              <td>Eduardo F.</td>
+              <td class="num-cell">Free</td>
+              <td class="num-cell">1</td>
+              <td><span class="pill late">Inadimplente</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="transitions.js"></script>
+</body>
+</html>
