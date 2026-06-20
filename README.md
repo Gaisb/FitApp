@@ -65,4 +65,8 @@ Esta é a **versão 0.1 — proposta inicial**. Trata-se de um material de apres
 
 ---
 
-*Conceito de apresentação · sem vínculo com MFIT Personal ou terceiros.*
+*Conceito de apresentação · sem vínculo com MFIT Personal ou terceiros.
+
+https://gaisb.github.io/FitApp/*
+
+
