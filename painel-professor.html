@@ -44,6 +44,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
         Avisos
       </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+        Dieta
+      </a>
       <a href="painel-usuario.html">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M16 3l4 4-4 4M20 7H8"/></svg>
         Visão do aluno
@@ -280,6 +284,117 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- DIETA: montar e enviar para o aluno -->
+    <div class="dash-block" style="margin-top:22px;">
+      <div class="dash-block-head">
+        <h3>Montar dieta</h3>
+        <a class="see-all" href="#">Dietas enviadas →</a>
+      </div>
+
+      <div class="diet-target-bar">
+        <span class="dt-label">Meta calórica calculada</span>
+        <span class="dt-val">2.150 kcal · TDEE × 1,0 (manutenção)</span>
+      </div>
+
+      <form class="diet-form" onsubmit="event.preventDefault(); alert('Protótipo — dieta enviada para o aluno (simulação).')">
+
+        <div class="field-row">
+          <div class="field">
+            <label>Aluno</label>
+            <select>
+              <option>Marina Santos</option>
+              <option>Rafael Lima</option>
+              <option>Camila Rocha</option>
+              <option>André Moura</option>
+              <option>Juliana Pires</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Objetivo</label>
+            <select>
+              <option>Manutenção</option>
+              <option>Perda de peso (déficit)</option>
+              <option>Hipertrofia (superávit)</option>
+              <option>Recomposição corporal</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>Calorias-alvo (kcal)</label>
+            <input type="number" value="2150" placeholder="Ex: 2150">
+          </div>
+          <div class="field">
+            <label>Proteína-alvo (g)</label>
+            <input type="number" value="130" placeholder="Ex: 130">
+          </div>
+        </div>
+
+        <!-- MACROS calculados em tempo real (mock visual) -->
+        <div class="macro-grid">
+          <div class="macro-item cal">
+            <div class="mv">2.150<span class="u">kcal</span></div>
+            <div class="ml">Calorias</div>
+          </div>
+          <div class="macro-item pro">
+            <div class="mv">130<span class="u">g</span></div>
+            <div class="ml">Proteína</div>
+          </div>
+          <div class="macro-item carb">
+            <div class="mv">260<span class="u">g</span></div>
+            <div class="ml">Carboidrato</div>
+          </div>
+          <div class="macro-item fat">
+            <div class="mv">62<span class="u">g</span></div>
+            <div class="ml">Gordura</div>
+          </div>
+        </div>
+
+        <!-- REFEIÇÕES: campos editáveis -->
+        <label style="display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px;">Refeições</label>
+        <div class="diet-meal-row">
+          <span class="dm-label">07:00</span>
+          <input type="text" placeholder="Café da manhã — descrever alimentos" value="Ovos mexidos (4 un) · Aveia com banana (80g) · Café sem açúcar">
+          <span class="dm-kcal">520 kcal</span>
+        </div>
+        <div class="diet-meal-row">
+          <span class="dm-label">10:00</span>
+          <input type="text" placeholder="Lanche da manhã" value="Whey protein (30g) com água · Maçã">
+          <span class="dm-kcal">210 kcal</span>
+        </div>
+        <div class="diet-meal-row">
+          <span class="dm-label">12:30</span>
+          <input type="text" placeholder="Almoço" value="Frango grelhado (200g) · Arroz integral (150g) · Legumes · Azeite">
+          <span class="dm-kcal">620 kcal</span>
+        </div>
+        <div class="diet-meal-row">
+          <span class="dm-label">15:30</span>
+          <input type="text" placeholder="Lanche da tarde" value="Pão integral (2 fatias) · Pasta de amendoim (20g) · Banana">
+          <span class="dm-kcal">330 kcal</span>
+        </div>
+        <div class="diet-meal-row">
+          <span class="dm-label">19:30</span>
+          <input type="text" placeholder="Jantar" value="Salmão assado (180g) · Batata doce (150g) · Salada verde">
+          <span class="dm-kcal">470 kcal</span>
+        </div>
+
+        <div class="field" style="margin-top:16px;">
+          <label>Observações para o aluno</label>
+          <textarea placeholder="Ex.: Aumentar água, evitar açúcar refinado...">Beber pelo menos 2,5 L de água por dia. Ajuste a porção de arroz conforme a fome. Em dias de treino, pode incluir 1 fruta a mais no lanche pré-treino.</textarea>
+        </div>
+
+        <div class="dash-action-row" style="margin-bottom:0;">
+          <button class="btn-action" type="submit">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            Enviar dieta para o aluno
+          </button>
+          <button class="btn-action ghost" type="button">Salvar como modelo</button>
+        </div>
+
+      </form>
     </div>
 
   </main>

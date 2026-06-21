@@ -25,18 +25,6 @@
         Visão geral
       </a>
       <a href="#">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        Usuários
-      </a>
-      <a href="#">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-        Personals
-      </a>
-      <a href="#">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
-        Financeiro
-      </a>
-      <a href="#">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
         Relatórios
       </a>
@@ -58,19 +46,23 @@
     <!-- TOPBAR -->
     <div class="dash-topbar">
       <div>
-        <span class="eyebrow">Plataforma</span>
-        <h1>Saúde geral do <em style="color:var(--ember);font-style:normal;">FORTIS</em></h1>
+        <span class="eyebrow">Painel de monitoramento</span>
+        <h1>Saúde da <em style="color:var(--ember);font-style:normal;">plataforma</em></h1>
       </div>
       <div class="dash-user">
         <div class="dash-user-meta" style="text-align:right;">
           <div class="nm">Admin</div>
-          <div class="sb">Acesso total</div>
+          <div class="sb">Somente leitura</div>
         </div>
         <div class="dash-avatar" style="background:var(--gold);">A</div>
       </div>
     </div>
 
-    <!-- KPIS -->
+    <p style="color:var(--bone-dim);font-size:14px;max-width:680px;margin-bottom:32px;line-height:1.6;">
+      Visão consolidada e somente leitura do FORTIS. Os dados abaixo são agregados automaticamente a partir das contas de personals e alunos — não há ações de edição aqui.
+    </p>
+
+    <!-- KPIS PRINCIPAIS -->
     <div class="kpi-grid">
       <div class="kpi-card">
         <div class="kpi-lbl">
@@ -106,80 +98,159 @@
       </div>
     </div>
 
-    <!-- BLOCOS -->
-    <div class="dash-grid-2">
+    <!-- GRID: dois gráficos de evolução -->
+    <div class="dash-grid-2" style="margin-bottom:22px;">
 
       <!-- CRESCIMENTO DE CADASTROS -->
       <div class="dash-block mini-chart">
         <div class="dash-block-head">
-          <h3>Crescimento de cadastros</h3>
-          <a class="see-all" href="#">Últimos 6 meses →</a>
+          <h3>Crescimento de cadastros — 6 meses</h3>
         </div>
         <svg viewBox="0 0 320 140" preserveAspectRatio="none">
           <polyline class="chart-fill" points="10,120 60,108 110,98 160,78 210,62 260,42 310,24 310,140 10,140" fill="rgba(255,90,46,0.10)"/>
           <polyline class="chart-line" points="10,120 60,108 110,98 160,78 210,62 260,42 310,24"/>
           <circle cx="310" cy="24" r="5" fill="#FF5A2E"/>
         </svg>
-        <div class="stat-row" style="border-top:1px solid var(--line);padding-top:14px;margin-top:14px;">
+        <div style="border-top:1px solid var(--line);padding-top:14px;margin-top:14px;display:flex;gap:24px;">
           <div>
-            <div class="num" style="font-family:'IBM Plex Mono',monospace;font-size:18px;">1.842</div>
-            <div class="lbl" style="font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">Usuários totais</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:18px;">1.842</div>
+            <div style="font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">Usuários totais</div>
           </div>
           <div>
-            <div class="num" style="font-family:'IBM Plex Mono',monospace;font-size:18px;color:var(--ember);">+7,5%</div>
-            <div class="lbl" style="font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">Crescimento mensal</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:18px;color:var(--ember);">+7,5%</div>
+            <div style="font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">Crescimento mensal</div>
           </div>
         </div>
       </div>
 
-      <!-- PERSONALS CADASTRADOS -->
-      <div class="dash-block">
+      <!-- RECEITA MENSAL -->
+      <div class="dash-block mini-chart">
         <div class="dash-block-head">
-          <h3>Personals cadastrados</h3>
-          <a class="see-all" href="#">Ver todos →</a>
+          <h3>Receita mensal — 6 meses</h3>
         </div>
-        <table class="dash-table">
-          <thead>
-            <tr>
-              <th>Personal</th><th>Plano</th><th>Alunos</th><th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Gabriel S.</td>
-              <td class="num-cell">Pro</td>
-              <td class="num-cell">24</td>
-              <td><span class="pill ok">Ativo</span></td>
-            </tr>
-            <tr>
-              <td>Beatriz N.</td>
-              <td class="num-cell">Pro</td>
-              <td class="num-cell">41</td>
-              <td><span class="pill ok">Ativo</span></td>
-            </tr>
-            <tr>
-              <td>Carlos T.</td>
-              <td class="num-cell">Free</td>
-              <td class="num-cell">3</td>
-              <td><span class="pill warn">Trial</span></td>
-            </tr>
-            <tr>
-              <td>Daniela V.</td>
-              <td class="num-cell">Pro</td>
-              <td class="num-cell">18</td>
-              <td><span class="pill ok">Ativo</span></td>
-            </tr>
-            <tr>
-              <td>Eduardo F.</td>
-              <td class="num-cell">Free</td>
-              <td class="num-cell">1</td>
-              <td><span class="pill late">Inadimplente</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <svg viewBox="0 0 320 140" preserveAspectRatio="none">
+          <polyline class="chart-fill" points="10,118 60,110 110,100 160,84 210,68 260,52 310,36 310,140 10,140" fill="rgba(91,168,255,0.10)"/>
+          <polyline class="chart-line" points="10,118 60,110 110,100 160,84 210,68 260,52 310,36" style="stroke:#5BA8FF;"/>
+          <circle cx="310" cy="36" r="5" fill="#5BA8FF"/>
+        </svg>
+        <div style="border-top:1px solid var(--line);padding-top:14px;margin-top:14px;display:flex;gap:24px;">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:18px;">R$ 96,2k</div>
+            <div style="font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">Mês atual</div>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:18px;color:#5BA8FF;">+18%</div>
+            <div style="font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">Variação</div>
+          </div>
+        </div>
       </div>
 
     </div>
+
+    <!-- DISTRIBUIÇÃO DE PLANOS -->
+    <div class="dash-block" style="margin-bottom:22px;">
+      <div class="dash-block-head">
+        <h3>Distribuição de planos</h3>
+      </div>
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>Plano</th><th>Assinantes</th><th>Participação</th><th>Receita média / mês</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pro (personal)</td>
+            <td class="num-cell">96</td>
+            <td class="num-cell">68%</td>
+            <td class="num-cell">R$ 89.280</td>
+            <td><span class="pill ok">Saudável</span></td>
+          </tr>
+          <tr>
+            <td>Free (personal)</td>
+            <td class="num-cell">31</td>
+            <td class="num-cell">22%</td>
+            <td class="num-cell">—</td>
+            <td><span class="pill warn">Em conversão</span></td>
+          </tr>
+          <tr>
+            <td>Aluno vinculado</td>
+            <td class="num-cell">1.715</td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td><span class="pill ok">Incluso no plano</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SAÚDE DOS PERSONALS -->
+    <div class="dash-block">
+      <div class="dash-block-head">
+        <h3>Personals — visão consolidada</h3>
+      </div>
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>Personal</th><th>Alunos</th><th>Plano</th><th>Adesão média</th><th>Receita/mês</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Beatriz Nogueira</td>
+            <td class="num-cell">41</td>
+            <td class="num-cell">Pro</td>
+            <td class="num-cell">94%</td>
+            <td class="num-cell">R$ 3.690</td>
+            <td><span class="pill ok">Ativo</span></td>
+          </tr>
+          <tr>
+            <td>Gabriel Schifter</td>
+            <td class="num-cell">24</td>
+            <td class="num-cell">Pro</td>
+            <td class="num-cell">91%</td>
+            <td class="num-cell">R$ 7.260</td>
+            <td><span class="pill ok">Ativo</span></td>
+          </tr>
+          <tr>
+            <td>Daniela Vargas</td>
+            <td class="num-cell">18</td>
+            <td class="num-cell">Pro</td>
+            <td class="num-cell">87%</td>
+            <td class="num-cell">R$ 1.620</td>
+            <td><span class="pill ok">Ativo</span></td>
+          </tr>
+          <tr>
+            <td>Carlos Mendes</td>
+            <td class="num-cell">38</td>
+            <td class="num-cell">Pro</td>
+            <td class="num-cell">91%</td>
+            <td class="num-cell">R$ 7.260</td>
+            <td><span class="pill ok">Ativo</span></td>
+          </tr>
+          <tr>
+            <td>Carlos Tavares</td>
+            <td class="num-cell">3</td>
+            <td class="num-cell">Free</td>
+            <td class="num-cell">72%</td>
+            <td class="num-cell">—</td>
+            <td><span class="pill warn">Trial</span></td>
+          </tr>
+          <tr>
+            <td>Eduardo Ferreira</td>
+            <td class="num-cell">1</td>
+            <td class="num-cell">Free</td>
+            <td class="num-cell">54%</td>
+            <td class="num-cell">—</td>
+            <td><span class="pill late">Inadimplente</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--bone-dim);margin-top:16px;">
+        Exibindo 6 de 96 personals · dados consolidados de hoje
+      </p>
+    </div>
+
   </main>
 </div>
 
