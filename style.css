@@ -1257,3 +1257,288 @@ body.dash-body{
   .lobby-grid{grid-template-columns:1fr;}
   .dash-table{font-size:13px;}
 }
+
+/* ===================================================================
+   PAINÉIS — COMPONENTES AVANÇADOS (v2)
+   -----------------------------------------------------------
+   Novos blocos inspirados nos mockups do Gabriel, mantendo o
+   design system FORTIS (ember p/ ação, verde p/ positivo,
+   gold p/ atenção, bone p/ texto).
+   =================================================================== */
+
+/* ---------- AÇÃO RÁPIDA (botão "Novo aviso" etc.) ---------- */
+.dash-action-row{
+  display:flex;
+  gap:10px;
+  margin-bottom:24px;
+  flex-wrap:wrap;
+}
+.btn-action{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--ember);
+  color:var(--ink);
+  border:none;
+  padding:11px 20px;
+  border-radius:100px;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;
+  font-size:13.5px;
+  cursor:pointer;
+  text-decoration:none;
+  transition:transform .2s, box-shadow .2s;
+}
+.btn-action:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,90,46,0.35);}
+.btn-action svg{width:16px;height:16px;stroke:currentColor;}
+.btn-action.ghost{
+  background:transparent;
+  color:var(--bone);
+  border:1px solid var(--line);
+  box-shadow:none;
+}
+.btn-action.ghost:hover{border-color:var(--ember);color:var(--ember);box-shadow:none;}
+
+/* ---------- GRID 3 COLUNAS (professor) ---------- */
+.dash-grid-3{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:22px;
+  align-items:start;
+}
+/* layout 2 colunas (aluno) */
+.dash-grid-cols{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  align-items:start;
+}
+
+/* ---------- TIMELINE / AGENDA ---------- */
+.timeline{display:flex;flex-direction:column;gap:2px;}
+.tl-item{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:14px;
+  padding:14px 0;
+  border-left:none;
+}
+.tl-time{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:13px;
+  color:var(--gold);
+  padding-top:2px;
+  min-width:48px;
+}
+.tl-body{
+  border-left:3px solid var(--line);
+  padding-left:14px;
+  transition:border-color .2s;
+}
+.tl-item:hover .tl-body{border-left-color:var(--ember);}
+.tl-body .tl-name{font-size:14.5px;font-weight:600;margin-bottom:2px;}
+.tl-body .tl-meta{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--bone-dim);}
+.tl-item.now .tl-body{border-left-color:var(--ember);}
+.tl-item.now .tl-time{color:var(--ember);}
+
+/* ---------- AVISOS / MENSAGENS ---------- */
+.msg-list{display:flex;flex-direction:column;gap:12px;}
+.msg-item{
+  background:var(--ink);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+}
+.msg-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:8px;
+}
+.msg-from{font-size:13.5px;font-weight:600;}
+.msg-time{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bone-dim);}
+.msg-text{font-size:13.5px;color:var(--bone-dim);line-height:1.5;}
+.msg-reply{
+  margin-top:10px;
+  display:flex;
+  gap:8px;
+}
+.msg-reply input{
+  flex:1;
+  background:var(--ink-soft);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:9px 12px;
+  color:var(--bone);
+  font-family:'Space Grotesk',sans-serif;
+  font-size:13px;
+}
+.msg-reply input:focus{outline:none;border-color:var(--ember);}
+.msg-reply button{
+  background:var(--ember);
+  border:none;
+  color:var(--ink);
+  border-radius:8px;
+  padding:0 14px;
+  font-weight:700;
+  cursor:pointer;
+  font-size:13px;
+}
+
+/* ---------- LISTA DE PAGAMENTOS ---------- */
+.pay-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+  gap:12px;
+}
+.pay-row:last-child{border-bottom:none;}
+.pay-row .pay-who{font-size:14px;}
+.pay-row .pay-meta{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--bone-dim);margin-top:2px;}
+.pay-amount{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:13.5px;
+  font-weight:500;
+}
+
+/* ---------- HERO TREINO DE HOJE (aluno) ---------- */
+.hero-treino{
+  background:linear-gradient(150deg, rgba(255,90,46,0.18), rgba(17,20,15,0.6));
+  border:1px solid rgba(255,90,46,0.35);
+  border-radius:var(--radius);
+  padding:26px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-treino::after{
+  content:"";
+  position:absolute;
+  inset:auto -40px -60px auto;
+  width:160px;height:160px;
+  background:radial-gradient(circle, rgba(255,90,46,0.25), transparent 70%);
+  pointer-events:none;
+}
+.hero-treino .ht-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11.5px;
+  color:var(--ember);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  margin-bottom:8px;
+}
+.hero-treino h3{font-size:24px;margin-bottom:6px;}
+.hero-treino .ht-sub{font-size:13px;color:var(--bone-dim);margin-bottom:18px;}
+.hero-treino .ht-meta{
+  display:flex;
+  gap:18px;
+  margin-bottom:18px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  color:var(--bone-dim);
+}
+.hero-treino .ht-meta strong{color:var(--bone);}
+
+/* ---------- CARD PLANO (aluno) ---------- */
+.plan-card{
+  background:var(--ink-soft);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+}
+.plan-card .pl-amount{
+  font-family:'Big Shoulders Display',sans-serif;
+  font-weight:900;
+  font-size:36px;
+  line-height:1;
+  color:var(--bone);
+  margin:8px 0 4px;
+}
+.plan-card .pl-cycle{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--bone-dim);}
+.plan-card .pl-due{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  color:var(--bone-dim);
+}
+
+/* ---------- FREQUÊNCIA / SEQUÊNCIA ---------- */
+.freq-card{
+  background:var(--ink-soft);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+}
+.freq-streak{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  margin:8px 0 14px;
+}
+.freq-streak .big{
+  font-family:'Big Shoulders Display',sans-serif;
+  font-weight:900;
+  font-size:40px;
+  line-height:1;
+  color:var(--ember);
+}
+.freq-streak .lbl{font-size:13px;color:var(--bone-dim);}
+.freq-dots{
+  display:flex;
+  gap:6px;
+  margin-bottom:10px;
+}
+.freq-dot{
+  width:30px;height:30px;
+  border-radius:8px;
+  background:var(--ink);
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  color:var(--bone-dim);
+}
+.freq-dot.on{
+  background:rgba(61,220,132,0.16);
+  border-color:rgba(61,220,132,0.5);
+  color:#3DDC84;
+}
+.freq-foot{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  color:var(--bone-dim);
+  padding-top:12px;
+  border-top:1px solid var(--line);
+}
+
+/* ---------- PRÓXIMOS TREINOS (agenda semanal do aluno) ---------- */
+.next-list{display:flex;flex-direction:column;gap:10px;}
+.next-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 14px;
+  background:var(--ink);
+  border:1px solid var(--line);
+  border-radius:10px;
+  gap:12px;
+}
+.next-item .ni-day{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+}
+.next-item .ni-name{font-size:14px;font-weight:600;margin-top:2px;}
+.next-item .ni-time{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--bone-dim);}
+
+/* ---------- RESPONSIVO DOS COMPONENTES v2 ---------- */
+@media(max-width:1100px){
+  .dash-grid-3{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:860px){
+  .dash-grid-3,.dash-grid-cols{grid-template-columns:1fr;}
+}
