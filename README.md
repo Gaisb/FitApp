@@ -21,6 +21,7 @@ O projeto é composto por cinco páginas, todas construídas com HTML, CSS e Jav
 - **Agente IA** (`agente-ia.html`) — Prévia visual de um chat de assistência. As respostas são exemplos fixos; nenhuma inteligência artificial real está conectada.
 - **Contato** (`contato.html`) — Formulário que monta um `mailto:` e um atalho direto para WhatsApp.
 - **Login / Cadastro** (`login.html`) — Painel duplo animado que alterna entre entrar e criar conta.
+- **Tela de usuário e professor** ('aluno/professor.html') - Painel funcional com apresentação de widgets.
 
 ## Detalhes técnicos
 
@@ -54,11 +55,10 @@ Por ser um site estático, basta abrir qualquer arquivo `.html` diretamente no n
 
 ## Estado do projeto
 
-Esta é a **versão 0.1 — proposta inicial**. Trata-se de um material de apresentação, sem vínculo com terceiros, e sem conexão com qualquer backend. Os formulários e o chat são apenas ilustrativos.
+Esta é a **versão 0.5 — proposta inicial**. Trata-se de um material de apresentação, sem vínculo com terceiros, e sem conexão com qualquer backend. Os formulários e o chat são apenas ilustrativos.
 
 ## Próximos passos
 
-- Validar o conceito e a identidade visual;
 - Definir nome, cores e tipografia finais;
 - Evoluir para as telas detalhadas de cadastro, treino e avaliação;
 - Conectar a um backend real e a um modelo de IA.
