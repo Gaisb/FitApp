@@ -1,3 +1,22 @@
+/* Bootstrap 5 (bundle inclui Popper) disponível em todas as páginas. */
+(function(){
+  'use strict';
+
+  if (window.bootstrap) return;
+
+  var script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
+  script.integrity = 'sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz';
+  script.crossOrigin = 'anonymous';
+  document.head.appendChild(script);
+})();
+
+/* Remove do fluxo os links do antigo seletor de painéis. */
+document.querySelectorAll('a[href="selecao-painel.html"]').forEach(function(link){
+  link.href = 'login.html';
+  link.lastChild.textContent = ' Sair';
+});
+
 /* ===========================================================
    TRANSIÇÃO FLUIDA ENTRE PÁGINAS
    -----------------------------------------------------------

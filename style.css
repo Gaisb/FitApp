@@ -1,3 +1,6 @@
+/* Bootstrap 5: base de componentes e utilitários para todas as páginas. */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
+
 :root{
     --ink:#11140F;
     --ink-soft:#1B1F17;
@@ -643,6 +646,20 @@ body.auth-body{
   font-family:'Space Grotesk',sans-serif;
 }
 .auth-submit:hover{transform:translateY(-2px);}
+.auth-submit{
+  width:100%;
+  border:0;
+  cursor:pointer;
+  text-align:center;
+  font-family:inherit;
+}
+.auth-error{
+  min-height:20px;
+  margin:8px 0;
+  color:var(--ember);
+  font-size:13px;
+}
+.field input[aria-invalid="true"]{border-color:var(--ember);}
 .auth-switch-mobile{display:none;text-align:center;margin-top:20px;font-size:13.5px;color:var(--bone-dim);}
 .auth-switch-mobile a{color:var(--ember);font-weight:600;}
 
